@@ -48,7 +48,7 @@ class Student
   end
 
   def self.new_from_db (array)
-    new_student = Student.new
+    new_student = Student.new(name, grade, id)
     @id = array[0]
     @name = array[1]
     @grade = array[2]
