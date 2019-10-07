@@ -2,8 +2,7 @@ require_relative "../config/environment.rb"
 
 class Student
 
-  attr_accessor :name, :grade
-  attr_reader :id
+  attr_accessor :name, :grade, :id
 
   def initialize (name, grade, id = nil)
     # do I need keyword arguments?
@@ -54,7 +53,7 @@ class Student
   def self.find_by_name (name)
     sql = "SELECT * FROM students WHERE name = ? LIMIT 1"
     DB[:conn].execute(sql, name).map do |row|
-      new_from_db(row)
+      self.new_from_db(row)
     end.first
   end
 
