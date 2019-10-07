@@ -21,7 +21,7 @@ class Student
         grade INTEGER
       )
       SQL
-    DB[:conn].execute.SQL
+    DB[:conn].execute(sql)
   end
 
   def self.drop_table
@@ -61,10 +61,9 @@ class Student
   end
 
   def update
-    sql = "UPDATE students SET name, grade = ?, ? WHERE id = ?"
+    sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
     DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
-
 
 
 end
