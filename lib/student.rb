@@ -6,7 +6,6 @@ class Student
   attr_reader :id
 
   def initialize (name, grade, id = nil)
-    # do I need to use self.name etc here?
     # do I need keyword arguments?
     @name = name
     @grade = grade
